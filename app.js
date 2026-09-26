@@ -946,47 +946,7 @@ Thank you for curating with AURA ATELIER.
   showToast('Invoice Receipt downloaded!', 'fa-file-arrow-down');
 }
 
-// --- 10. SUBMISSION REQUIREMENT 4.C REFLECTION UTILS ---
-const REFLECTION_TEXT = `Building the AURA ATELIER mock fashion store provided transformative insights into modern digital commerce architectures and visual merchandising strategies. I learned that creating a successful e-commerce ecosystem extends far beyond aesthetic appeal—it requires architecting a seamless end-to-end customer journey from intuitive product discovery to friction-free checkout. Implementing real-time 3D WebGL product visualization taught me how interactive merchandising significantly mitigates customer purchase uncertainty, bridging the tactile gap inherent to online apparel shopping.
 
-Additionally, developing dynamic client-side state management for cart drawers, currency conversions, localized pricing, and simulated multi-tier payment gateways (UPI, Credit Cards, Express Checkout) reinforced the vital importance of UX responsiveness and micro-interactions in driving conversion rates. I also explored how curated copywriting (50–100 word luxury product descriptions) combined with trust badges and transparent sustainability claims directly enhances brand equity and organic customer retention. Overall, this project bridged theoretical digital marketing principles with practical e-commerce engineering, deepening my understanding of customer-centric web merchandising and high-converting retail design.`;
-
-function copyReflectionText() {
-  navigator.clipboard.writeText(REFLECTION_TEXT).then(() => {
-    showToast('Reflection (182 words) copied to clipboard!', 'fa-copy');
-  }).catch(() => {
-    showToast('Reflection copied!', 'fa-copy');
-  });
-}
-
-function downloadReflectionDoc() {
-  const content = `================================================================================
-THAKUR COLLEGE OF SCIENCE AND COMMERCE
-Class: TYBMS | Subject: E-Commerce & Digital Marketing
-Assignment: Build a Mock Online Store (Category: Fashion)
-Submission Requirement 4.c - Project Learning Reflection
-================================================================================
-
-PROJECT REFLECTION (Word Count: 182 Words):
-
-${REFLECTION_TEXT}
-
-Key Learning Pillars:
-1. Product Architecture & 50-100 Word Luxury Merchandising Copywriting
-2. 3D WebGL Interactive Virtual Try-On & Digital Merchandising
-3. Multi-Step Friction-Free Checkout with Dummy UPI & Card Gateways
-4. Responsive State Management, Currency Conversion & Promo Logic
-================================================================================`;
-
-  const blob = new Blob([content], { type: 'text/plain' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = 'TYBMS_Ecommerce_Project_Reflection.txt';
-  a.click();
-  URL.revokeObjectURL(url);
-  showToast('Project Reflection Document downloaded!', 'fa-file-arrow-down');
-}
 
 // --- 11. PROMO CODE ENGINE ---
 function applyPromoCode() {
@@ -1365,10 +1325,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 12. Promo Codes
   document.getElementById('applyPromoBtn')?.addEventListener('click', applyPromoCode);
-
-  // 13. Reflection Actions
-  document.getElementById('copyReflectionBtn')?.addEventListener('click', copyReflectionText);
-  document.getElementById('downloadReflectionDocBtn')?.addEventListener('click', downloadReflectionDoc);
 
   // 14. Lookbook Hotspot Quick View Buttons
   document.querySelectorAll('.quick-shop-btn').forEach(btn => {
